@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:notice] = "Welcome to Personal Shopper, #{user.username}!"
-      redirect_to questions_path
+      redirect_to users_path
     else
       flash[:danger] = 'Invalid email/password combination'
       render "new"
@@ -15,7 +15,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    # log_out
+    if logged_in?
+      session.clear
+    end
     redirect_to root_url
   end
 end

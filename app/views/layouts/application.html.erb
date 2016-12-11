@@ -22,7 +22,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down ">
             <% if logged_in? %>
               <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
-              <li><%= link_to "Log Out", session_path(session), method: :delete %></li>
+              <li><%= link_to "Log Out", sessions_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Create an Account", new_user_path  %></li>
               <li><%= link_to "Log In", new_session_path  %></li>
