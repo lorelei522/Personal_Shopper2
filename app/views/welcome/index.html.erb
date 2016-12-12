@@ -1,1 +1,10 @@
-<h3>Welcome to Personal Shopper</h3>
+<h3>Navy with Black? Oh my <i class="em em-eyes"></i></h3>
+
+<div>
+  <% if logged_in? %>
+    <%= image_tag("searchbar.png", :alt => "rss feed") %>
+  <% else %>
+    <p>Welcome to Navy with Black. Your premiere outfit search engine.</p>
+    <p>Register to get started!</p>
+  <% end %>
+</div>
