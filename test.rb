@@ -13,7 +13,7 @@ service.authorization = \
 
 content = File.read('./dress.jpg')
 image = Google::Apis::VisionV1::Image.new(content: content)
-feature = Google::Apis::VisionV1::Feature.new(type: 'LABEL_DETECTION')
+feature = Google::Apis::VisionV1::Feature.new(type: 'IMAGE_PROPERTIES')
 
 annotate_image_request_object = Google::Apis::VisionV1::BatchAnnotateImagesRequest.new(requests: [
   {

@@ -2657,3 +2657,1583 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.3ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImageToUsers (20161216201205)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImageToUsers < ActiveRecord::Migration[4.2] (called from load at /Users/sherianne/.rbenv/versions/2.2.2/bin/rake:23)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "image_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "image_content_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216201205"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-12-16 15:19:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 558ms (Views: 543.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-12-16 15:19:33 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:19:34 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 51.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:19:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"74T3D+ndF3y6RgYCZxKC20ouc9b9Y0bbkZ7Pq6r4eZsJeCgdfKCMhJry4qaUkAbqALptnMyatWP/4aEFFLY60A==", "user"=>{"username"=>"sheri", "email"=>"sheriannebolling@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sheri"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sheriannebolling@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "sheri"], ["email", "sheriannebolling@gmail.com"], ["password_digest", "$2a$10$ecryCa7B9ldb8SLUfhbh7uSq0raqQ2R5LqoBjlrQn2SkudIl86F5q"], ["created_at", 2016-12-16 20:19:49 UTC], ["updated_at", 2016-12-16 20:19:49 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:19:49 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:20:56 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (21.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 54.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:23:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 43.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:25:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:25:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (19.5ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (161.2ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:26:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:26:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.8ms)
+Started GET "/" for ::1 at 2016-12-16 15:26:15 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:26:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (9.6ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.2ms)
+Started GET "/" for ::1 at 2016-12-16 15:26:27 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:26:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:26:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (12.6ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.2ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:26:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:26:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (121.0ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:28:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:28:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (7.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (122.1ms)
+Started GET "/" for ::1 at 2016-12-16 15:29:00 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:29:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (7.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (124.7ms)
+Started GET "/" for ::1 at 2016-12-16 15:29:02 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:29:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:29:16 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:30:36 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:30:48 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:30:50 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:30:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (5.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.5ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:35:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:35:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (5.9ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (133.6ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:35:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:35:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (7.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (129.7ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:36:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-12-16 15:36:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.6ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.3ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:38:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:38:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (11.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.8ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:44:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 48.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:44:51 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (16.0ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (201.1ms)
+Started GET "/users/6" for ::1 at 2016-12-16 15:48:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 104ms (Views: 68.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:48:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (29.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (241.2ms)
+Started DELETE "/sessions" for ::1 at 2016-12-16 15:48:07 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2hT/4f9dBR7ul7huDCfSnKllR9SkfvItega2Nuj2aL5Jk1k9ddkF88jlwdavUuSE2yeEMOnmxJhJpGUI0q3rRQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:48:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:48:09 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-12-16 15:48:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2016-12-16 15:48:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+CevJM3JE6fuom2wTJLYmIq0+PnXE0+nKzx+jbVrQ1IqCoRebZyjPyyVTzvtHmwczxWHf6uisEOKGcVMmy9rdQ==", "email"=>"sheriannebolling@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sheriannebolling@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users
+Completed 302 Found in 83ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2016-12-16 15:48:19 -0500
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:48:19 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:48:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 142.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:48:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.6ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.4ms)
+Started GET "/" for ::1 at 2016-12-16 15:48:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (6.1ms)
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:48:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+Completed 200 OK in 73ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (18.9ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.8ms)
+Started GET "/" for ::1 at 2016-12-16 15:48:30 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 47ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for ::1 at 2016-12-16 15:48:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Started GET "/images/small/missing.png" for ::1 at 2016-12-16 15:48:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/small/missing.png"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+  Rendering users/show.html.erb within layouts/application
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+Completed 200 OK in 59ms (Views: 50.0ms | ActiveRecord: 0.7ms)
+
+
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (7.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (157.1ms)
+Started DELETE "/sessions" for ::1 at 2016-12-16 15:48:39 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SPA1z26mtqrOn/4CBRdFw6Tlb8Uk9uiQmT1gLvQDONkSlMixCnmCXiPseA9bsALJH647YvYSwRH6g6AFzZ2a0Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:48:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:48:53 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:49:25 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pA0F1mPKVk9Jl5ilibAdX/ashZG+DAO8+N8A4Z2HE5/vuB77JTiWnhRWVvCB8KaIqnl5UoEYgvh9/KBUaedCdA==", "user"=>{"username"=>"John", "email"=>"john@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "John"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "John"], ["email", "john@gmail.com"], ["password_digest", "$2a$10$9OMAqA.EuJ9mH5fb2N2AfeXW5ruy5hXcHmmkaWZr3CtR1c00yWTk."], ["created_at", 2016-12-16 20:49:25 UTC], ["updated_at", 2016-12-16 20:49:25 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:49:25 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:49:47 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I/9x1cjLkyJcmvUGVRFc5gODNfvcFc14a5EJDz/oknbHm0+DvbtZ2TBFaypeLG4J2ZXkxqXdzUF5VWdveHw5Jg==", "user"=>{"username"=>"melanie", "email"=>"melanie@gmail.com", "password"=>"[FILTERED]", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe1ad217780 @tempfile=#<Tempfile:/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/RackMultipart20161216-10763-shxoao.jpg>, @original_filename="10568784_10152171913621831_2140713466454883462_n (1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"10568784_10152171913621831_2140713466454883462_n (1).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Signup"}
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-10763-1vjtxg6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/77e00879b372082ff2c3205e8d8ea9f720161216-10763-aymx20'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/77e00879b372082ff2c3205e8d8ea9f720161216-10763-18f6l0k'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-10763-1wfagsk.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+25" +repage '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/77e00879b372082ff2c3205e8d8ea9f720161216-10763-m2q6m5'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-10763-cmwzg5.jpg'
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "melanie"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "melanie@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "melanie"], ["email", "melanie@gmail.com"], ["password_digest", "$2a$10$0y4WdhlWGgSyiLnGrcdFsuDmxYS3Jc1wB22naPEPAyOzFNWheXKBS"], ["created_at", 2016-12-16 20:49:48 UTC], ["updated_at", 2016-12-16 20:49:48 UTC], ["image_file_name", "10568784_10152171913621831_2140713466454883462_n_(1).jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 71494], ["image_updated_at", 2016-12-16 20:49:48 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 586ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:49:48 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/8" for ::1 at 2016-12-16 15:49:50 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/system/users/images/000/000/008/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481921388" for ::1 at 2016-12-16 15:49:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/008/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (12.9ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (136.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161211163720)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161211163720"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAttachmentImageToUsers (20161216201205)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImageToUsers < ActiveRecord::Migration[4.2] (called from require at /Users/sherianne/Dev_phase_3_3/Personal_Shopper2/bin/rails:9)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "image_file_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "image_content_type" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "image_file_size" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216201205"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-12-16 20:50:36 UTC], ["updated_at", 2016-12-16 20:50:36 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/8" for ::1 at 2016-12-16 15:51:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 32ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=8):
+  
+app/controllers/users_controller.rb:7:in `show'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.1ms)
+Started GET "/" for ::1 at 2016-12-16 15:51:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 264.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 15:51:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (22.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 40.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 15:51:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KecDMzdGCAoI9U979b5qmbbItYN9i0yNBFR9Ag5rIFhiUhgecbTI21U0gS79/tFO6h1JQEKfzcmBd923+gtxsw==", "user"=>{"username"=>"sheri", "email"=>"sheriannebolling@gmail.com", "password"=>"[FILTERED]", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb9f771ff08 @tempfile=#<Tempfile:/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/RackMultipart20161216-11344-10j64x.jpg>, @original_filename="10568784_10152171913621831_2140713466454883462_n (1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"10568784_10152171913621831_2140713466454883462_n (1).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Signup"}
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-11344-11y8cey.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/75fa8aa312fa2ee87dc5cefed10040e420161216-11344-1leufu8'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/75fa8aa312fa2ee87dc5cefed10040e420161216-11344-17sul2g'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-11344-19sq8m6.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+25" +repage '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/75fa8aa312fa2ee87dc5cefed10040e420161216-11344-dbw6co'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-11344-zz2p35.jpg'
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sheri"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sheriannebolling@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "sheri"], ["email", "sheriannebolling@gmail.com"], ["password_digest", "$2a$10$fUX9eRFWTxksBQQsdevwP.PVCpF2efOpZECCrA4dVsLWU26ILgWQ2"], ["created_at", 2016-12-16 20:51:24 UTC], ["updated_at", 2016-12-16 20:51:24 UTC], ["image_file_name", "10568784_10152171913621831_2140713466454883462_n_(1).jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 71494], ["image_updated_at", 2016-12-16 20:51:23 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 591ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 15:51:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-16 15:51:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481921483" for ::1 at 2016-12-16 15:51:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (9.7ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (151.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/1" for ::1 at 2016-12-16 16:06:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 373ms (Views: 325.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481921483" for ::1 at 2016-12-16 16:06:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.0ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.8ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (205.7ms)
+Started GET "/users/1" for ::1 at 2016-12-16 16:09:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481921483" for ::1 at 2016-12-16 16:09:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/001/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (10.5ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.7ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (142.4ms)
+Started DELETE "/sessions" for ::1 at 2016-12-16 16:10:21 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P46z1lobwZyMSNavz7NF6XjI9syL4G+7t0DokmMwQ//b6o2AL2sLZ+CXSIPEjncGot4n8fIob4KlhIbyJKTorw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 16:10:21 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (6.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 88.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-12-16 16:10:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (53.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 84.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 16:10:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39lGfTS0gZl2p2aewzHC8afdCTXAFvdVZkoQz0P5cPRAK1py62Hqch1qIUGdfuhE4yNysoucj3GyciDzN7IJNw==", "user"=>{"username"=>"Melanie", "email"=>"melanie@gmail.com", "password"=>"[FILTERED]", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff327b26750 @tempfile=#<Tempfile:/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/RackMultipart20161216-12614-v69kdx.jpg>, @original_filename="10568784_10152171913621831_2140713466454883462_n (1).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"10568784_10152171913621831_2140713466454883462_n (1).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Signup"}
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-12614-ap4kos.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/b8a53504bb6b659404fd1bff1fab66af20161216-12614-hf18j5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/b8a53504bb6b659404fd1bff1fab66af20161216-12614-2sok3q'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]'
+Command :: convert '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/98f8292fc8b0e9ca9ef2cd1d64db9f6620161216-12614-a1muzy.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+25" +repage '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/b8a53504bb6b659404fd1bff1fab66af20161216-12614-5m0x99'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/tt/f6301ggn0r5dcyl2jnrgbzlr0000gn/T/d571eed984e257b3b36a9cf8e11ec74520161216-12614-xtfz8r.jpg'
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Melanie"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "melanie@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Melanie"], ["email", "melanie@gmail.com"], ["password_digest", "$2a$10$roxEwY.bq./mzZXU3/xVW.M4Q.9HTcypcGZWdEv.0NzV2HxBdNvvy"], ["created_at", 2016-12-16 21:10:49 UTC], ["updated_at", 2016-12-16 21:10:49 UTC], ["image_file_name", "10568784_10152171913621831_2140713466454883462_n_(1).jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 71494], ["image_updated_at", 2016-12-16 21:10:49 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 608ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 16:10:49 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/2" for ::1 at 2016-12-16 16:10:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/system/users/images/000/000/002/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481922649" for ::1 at 2016-12-16 16:10:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/002/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (15.2ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (160.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/system/users/images/000/000/002/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg?1481922649" for ::1 at 2016-12-16 16:15:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/users/images/000/000/002/small/10568784_10152171913621831_2140713466454883462_n_%281%29.jpg"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered collection of /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (12.5ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.7ms)
+  Rendering /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered /Users/sherianne/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (162.9ms)
+Started GET "/users/2" for ::1 at 2016-12-16 16:16:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for ::1 at 2016-12-16 16:17:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 119.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 16:18:30 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 102ms (Views: 97.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for ::1 at 2016-12-16 16:18:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 53.2ms | ActiveRecord: 0.3ms)
+
+
